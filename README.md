@@ -14,4 +14,6 @@ There are 6 interactive web pages in php.
 5. Add new transaction
 6. Cancel Transaction
 
+Follow the instructions in Readme.txt file in Files Folder.
+
 
