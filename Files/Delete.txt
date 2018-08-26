@@ -1,0 +1,42 @@
+DROP TABLE ARTICLE_AUTHOR;
+DROP TABLE AUTHOR;
+DROP TABLE ARTICLE;
+DROP TABLE MAGAZINEVOLUME;
+DROP TABLE MAGAZINE;
+DROP TABLE TRANSACTIONDETAILS;
+DROP TABLE TRANSACTION;
+DROP TABLE CUSTOMER;
+DROP TABLE EXPENSES;
+DROP TABLE MONTHLYHOURS;
+DROP TABLE WORKHOURS;
+DROP TABLE EMPLOYEE;
+DROP TABLE YEARLYRENT;
+DROP TABLE ITEM;
+
+
+select * from ARTICLE;
+select * from AUTHOR;
+select * from MAGAZINEVOLUME;
+select * from MAGAZINE;
+select * from ARTICLE_AUTHOR;
+
+LOAD DATA LOCAL INFILE 'Magazine.csv' INTO TABLE MAGAZINE FIELDS TERMINATED BY ',';
+
+SET FOREIGN_KEY_CHECKS=0
+
+load data local infile 'Article.csv' into table ARTICLE fields terminated by ','
+enclosed by '"' lines terminated by '\n'  IGNORE 1 ROWS SET _id = NULL;
+
+load data local infile 'Author.tsv' into table AUTHOR fields terminated by '\t' (lname,fname,email) IGNORE 1 ROWS SET _id = NULL;
+
+set sql_mode='STRICT_ALL_TABLES'
+
+ ARTICLE        |
+| ARTICLE_AUTHOR |
+| AUTHOR         |
+| CUSTOMER       |
+| ITEM           |
+| MAGAZINE       |
+| MAGAZINEVOLUME |
+| TRANSACTION    |
+| YEARLYRENT
